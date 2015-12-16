@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="FirstModule">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular.JS</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<style type="text/css">
+		body { padding: 50px; }
+	</style>
+</head>
+<body ng-controller="FirstController">
+	<div class="container-fluid" style="padding-top: 800px;">
+		<ul class="nav nav-pills">
+			<li ng-class="{ active: isSelected(1) }" ><a href="#" ng-click="selectTab(1)">Tab1</a></li>
+			<li ng-class="{ active: isSelected(2) }" ><a href="#" ng-click="selectTab(2)">Tab2</a></li>
+			<li ng-class="{ active: isSelected(3) }" ><a href="#" ng-click="selectTab(3)">Tab3</a></li>
+		</ul>
+		<div class="panel" ng-show="isSelected(1)">
+			<h2>Tab1</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae tempore porro aliquid deserunt iure vitae recusandae, odio nihil, consequatur dicta, nesciunt possimus. Natus repellendus facere iusto necessitatibus, eaque provident minima.</p>
+		</div>
+		<div class="panel" ng-show="isSelected(2)">
+			<h2>Tab2</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo commodi recusandae in cum similique quae, hic molestias maiores accusamus beatae quia voluptas harum cupiditate impedit totam consequuntur sint nesciunt quaerat!</p>
+		</div>
+		<div class="panel" ng-show="isSelected(3)">
+			<h2>Tab3</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, fugiat quas ex sed quos ullam quae quo architecto porro optio vitae blanditiis laborum quidem, aperiam doloribus eius omnis. Nesciunt, amet.</p>
+		</div>
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
