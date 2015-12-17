@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="TodoModule">
+<head>
+	<meta charset="UTF-8">
+	<title>Todos</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
+	<script src="app.js"></script>
+</head>
+<body>
+	<div class="container" ng-controller="TodoController as todoCtrl">
+		<h1>Todo</h1>
+		<div>{{ todoCtrl.remaining() }} of {{ todoCtrl.todos.length }} remaining [<a href="" ng-click="todoCtrl.archive()">archive</a>]</div>
+		<ul>
+			<li ng-repeat="todo in todoCtrl.todos" class="todo--{{ todo.state }}">
+				<div class="checkbox">
+					<input type="checkbox" ng-model="todo.state">{{ todo.text }}
+				</div>
+			</li>
+		</ul>
+		<form class="form-inline" ng-submit="todoCtrl.AddTodo()">
+			<input type="text" placeholder="add new todo here" class="form-control" ng-model="todoCtrl.todoText">
+			<button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-plus"></i>Add</button>
+		</form>
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+</html>
